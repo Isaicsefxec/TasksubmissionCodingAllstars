@@ -1,0 +1,200 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Animation</title>
+</head>
+<body>
+  <header>
+    <h1>New Header</h1>
+  </header>
+  
+  <section class="new-interactive-elements">
+    <button class="new-btn-scale">Scale</button>
+    <div class="new-slider-container">
+      <input type="range" class="new-slider" min="0" max="100" value="60">
+    </div>
+    <label class="new-toggle">
+      <input type="checkbox">
+      <span class="new-slider-round"></span>
+    </label>
+  </section>
+  
+  <section class="new-pseudo-elements">
+    <div class="new-box">
+      <p>::before</p>
+      <p>::after</p>
+    </div>
+  </section>
+  
+  <section class="new-swap">
+    <div class="new-card">
+      <div class="new-card-inner">
+        <div class="new-card-front">Front</div>
+        <div class="new-card-back">Back</div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <p>New Custom Cursors</p>
+  </footer>
+</body>
+</html>
+<style>
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Interactive elements */
+.new-interactive-elements {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.new-btn-scale {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.new-btn-scale:hover {
+  transform: scale(1.1);
+}
+
+.new-slider-container {
+  padding: 1rem;
+}
+
+.new-slider {
+  width: 100%;
+}
+
+.new-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.new-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.new-slider-round {
+  border-radius: 34px;
+}
+
+.new-slider-round:before {
+  border-radius: 50%;
+}
+
+/* Pseudo-elements */
+.new-pseudo-elements {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.new-box {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  background-color: #007bff;
+  color: white;
+}
+
+.new-box::before,
+.new-box::after {
+  content: "Hey there";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+}
+
+.new-box::before {
+  top: -20px;
+  left: -20px;
+}
+
+.new-box::after {
+  bottom: -20px;
+  right: -20px;
+}
+
+/* 3D elements */
+.new-swap {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.new-card {
+  perspective: 1000px;
+  width: 200px;
+  height: 300px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.new-card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.new-card:hover .new-card-inner {
+  transform: rotateY(180deg);
+}
+
+.new-card-front,
+.new-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-card-front {
+  background-color: blue;
+}
+
+.new-card-back {
+  background-color: green;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Custom cursors */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+   
+}
+</style>
